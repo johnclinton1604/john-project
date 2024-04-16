@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{data.title}}</h1>
+    <h4>Posted on {{data.blog_date}}</h4>
+    <img src="{{data.poster.url}}" alt="">
+    <h1>STORY</h1>
+    <p>{{data.story}}</p>
+    <h1>REVIEW</h1>
+    <p>{{data.review}}</p><br><br>
+    <h3>Relese Date : {{release_date}}</h3>
+    <h2>Rating : {{data.movie_rating}} out of 5 </h2><br>
+
+    <h1>{{comment | length}} comments:</h1><br><br>
+    <div>
+        {% for i in comment %}
+        <h2>{{i.user}} said...</h2>
+        <p>{{i.comment}}</p>
+        <h4>{{i.comment_date}}</h4>
+        {% endfor %}
+    </div><br><br>
+    <div>
+        <h1>Leave your comment</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="post a comment" id="">
+        </form>
+    </div><br><br>
+    <a href="{% url 'home' %}"><button type="button">RETURN</button></a>
+</body>
+
+</html>

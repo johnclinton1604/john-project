@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+</head>
+<style>
+    #body1{
+        background-image:url("../../static/img/bg.jpg");
+    }
+    #log1{
+        border: 1px solid black;
+        display: inline-block;
+        margin: 120px;
+        padding: 80px;
+        border-radius: 20px;
+        position: relative;
+        left: 350px;
+        top: 70px;
+        box-shadow: 10px 10px 5px black;
+        background-color: white;
+        transition: delay;
+    }
+    #log1:hover{
+       transform: scale(1.5,1.5);
+    }
+    video{
+        border: 1px solid black;
+    }
+    
+</style>
+<body id="body1">
+    
+    <div id="log1">
+       
+        <h1>login page</h1>
+        <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <input type="submit" value="submit">
+        </form>
+    </div>                 
+</body>
+</html>

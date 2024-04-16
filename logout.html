@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+</head>
+<style>
+    .head{
+        display: inline-block;
+        margin: 120px;
+        padding: 80px;
+        border-radius: 20px;
+        position: relative;
+        left: 350px;
+        top: 70px;
+        box-shadow: 10px 10px 5px black;
+        background-color: rgb(168, 92, 92);
+    }
+    #but{
+        display: inline-block;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: #3a1f5d;
+        color: white;
+    }
+    
+</style>
+<body>
+    
+    <div class="head">
+    <h1>LOGOUT SUCCESSFULLY</h1>
+    <a href="{% url 'login' %}"><h2 id="but"><button>login</button></h2></a>
+    
+        <!-- {% if request.user.is_authenticated %}
+        <a href="{% url 'login' %}"><button type="button" id="log2">login</button></a>
+        {% else %}
+        <a href="{% url 'logout' %}" ><button type="button" id="button1">Logout</button></a>
+        <a href="{% url 'register' %}" ><button type="button" id="button2">Register</button></a>
+        {% endif %} -->
+    </div>
+</body>
+</html>
